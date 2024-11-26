@@ -1,5 +1,6 @@
 package com.jdd050.bettervanillamod;
 
+import com.jdd050.bettervanillamod.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
@@ -44,8 +45,10 @@ public class BetterVanillaMod
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
-        // Register calls for event bus
+        // Register mod event bus
         MinecraftForge.EVENT_BUS.register(this);
+        // Register items event bus
+        ModItems.register(modEventBus);
         // Register items to creative tabs
         modEventBus.addListener(this::addCreative);
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
