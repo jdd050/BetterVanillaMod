@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.function.Supplier;
 
 public class ModArmorMaterials {
-    public static final Holder<ArmorMaterial> WOOD_ARMOR_MATERIAL = register("planks", Util.make(new EnumMap<>(ArmorItem.Type.class),
+    public static final Holder<ArmorMaterial> WOOD_ARMOR_MATERIAL = register("wood", Util.make(new EnumMap<>(ArmorItem.Type.class),
             attribute -> {
                 attribute.put(ArmorItem.Type.BOOTS, 1);
                 attribute.put(ArmorItem.Type.LEGGINGS, 1);
@@ -37,7 +37,7 @@ public class ModArmorMaterials {
                 attribute.put(ArmorItem.Type.BODY, 1);
             }), 13, 1, 0.05f, () -> Items.STONE, SoundEvents.STONE_PLACE); // TODO: account for all stone
 
-    public static final Holder<ArmorMaterial> COPPER_ARMOR_MATERIAL = register("copper_ingot", Util.make(new EnumMap<>(ArmorItem.Type.class),
+    public static final Holder<ArmorMaterial> COPPER_ARMOR_MATERIAL = register("copper", Util.make(new EnumMap<>(ArmorItem.Type.class),
             attribute -> {
                 attribute.put(ArmorItem.Type.BOOTS, 2);
                 attribute.put(ArmorItem.Type.LEGGINGS, 4);
@@ -46,9 +46,32 @@ public class ModArmorMaterials {
                 attribute.put(ArmorItem.Type.BODY, 2);
             }), 10, 0, 0, () -> Items.COPPER_INGOT, SoundEvents.COPPER_PLACE);
 
-    // amethyst
-    // quartz
-    // emerald
+    public static final Holder<ArmorMaterial> AMETHYST_ARMOR_MATERIAL = register("amethyst", Util.make(new EnumMap<>(ArmorItem.Type.class),
+            attribute -> {
+                attribute.put(ArmorItem.Type.BOOTS, 3);
+                attribute.put(ArmorItem.Type.LEGGINGS, 5);
+                attribute.put(ArmorItem.Type.CHESTPLATE, 7);
+                attribute.put(ArmorItem.Type.HELMET, 2);
+                attribute.put(ArmorItem.Type.BODY, 2);
+            }), 12, 1, 0, () -> ModItems.AMETHYST_GEM.get(), SoundEvents.AMETHYST_BLOCK_CHIME);
+
+    public static final Holder<ArmorMaterial> QUARTZ_ARMOR_MATERIAL = register("quartz", Util.make(new EnumMap<>(ArmorItem.Type.class),
+            attribute -> {
+                attribute.put(ArmorItem.Type.BOOTS, 3);
+                attribute.put(ArmorItem.Type.LEGGINGS, 5);
+                attribute.put(ArmorItem.Type.CHESTPLATE, 7);
+                attribute.put(ArmorItem.Type.HELMET, 2);
+                attribute.put(ArmorItem.Type.BODY, 2);
+            }), 12, 1, 0, () -> Items.QUARTZ, SoundEvents.AMETHYST_BLOCK_CHIME);
+
+    public static final Holder<ArmorMaterial> EMERALD_ARMOR_MATERIAL = register("emerald", Util.make(new EnumMap<>(ArmorItem.Type.class),
+            attribute -> {
+                attribute.put(ArmorItem.Type.BOOTS, 3);
+                attribute.put(ArmorItem.Type.LEGGINGS, 6);
+                attribute.put(ArmorItem.Type.CHESTPLATE, 8);
+                attribute.put(ArmorItem.Type.HELMET, 3);
+                attribute.put(ArmorItem.Type.BODY, 3);
+            }), 13, 2.5f, 0.05f, () -> Items.EMERALD, SoundEvents.EXPERIENCE_ORB_PICKUP);
 
     // helper method
     private static Holder<ArmorMaterial> register(String name, EnumMap<ArmorItem.Type, Integer> typeProtection,
@@ -62,7 +85,11 @@ public class ModArmorMaterials {
             typeMap.put(type, typeProtection.get(type));
         }
 
+        Holder<SoundEvent> equipSoundHolder = BuiltInRegistries.SOUND_EVENT.getHolderOrThrow(
+                BuiltInRegistries.SOUND_EVENT.getResourceKey(equipSound).orElseThrow()
+        );
+
         return Registry.registerForHolder(BuiltInRegistries.ARMOR_MATERIAL, location,
-                new ArmorMaterial(typeProtection, enchantability, (Holder<SoundEvent>) equipSound, ingredient, layers, toughness, knockbackResistance));
+                new ArmorMaterial(typeProtection, enchantability, equipSoundHolder, ingredient, layers, toughness, knockbackResistance));
     }
 }

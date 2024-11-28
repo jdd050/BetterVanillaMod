@@ -23,8 +23,8 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BetterVanillaMod.MODID);
 
     /* Custom items - Materials */
-    public static final RegistryObject<Item> LAPIS_INGOT = ITEMS.register("lapis_ingot", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> REDSTONE_INGOT = ITEMS.register("redstone_ingot", () -> new Item(new Item.Properties()));
+    //public static final RegistryObject<Item> LAPIS_INGOT = ITEMS.register("lapis_ingot", () -> new Item(new Item.Properties()));
+    //public static final RegistryObject<Item> REDSTONE_INGOT = ITEMS.register("redstone_ingot", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> AMETHYST_GEM = ITEMS.register("amethyst_gem", () -> new Item(new Item.Properties()));
 
     // Item registration method
@@ -35,28 +35,59 @@ public class ModItems {
     /* Custom Equipment - Wood Tier */
     public static final RegistryObject<Item> WOOD_HELMET = ITEMS.register("wood_helmet",
             () -> new ArmorItem(ModArmorMaterials.WOOD_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Properties()
-                            .durability(ArmorItem.Type.HELMET.getDurability(4))));
+                            .durability(ArmorItem.Type.HELMET.getDurability(4)))
+    );
     public static final RegistryObject<Item> WOOD_CHESTPLATE = ITEMS.register("wood_chestplate",
             () -> new ArmorItem(ModArmorMaterials.WOOD_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Properties()
-                            .durability(ArmorItem.Type.CHESTPLATE.getDurability(4))));
+                            .durability(ArmorItem.Type.CHESTPLATE.getDurability(4)))
+    );
     public static final RegistryObject<Item> WOOD_LEGGINGS = ITEMS.register("wood_leggings",
             () -> new ArmorItem(ModArmorMaterials.WOOD_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, new Item.Properties()
-                            .durability(ArmorItem.Type.LEGGINGS.getDurability(4))));
+                            .durability(ArmorItem.Type.LEGGINGS.getDurability(4)))
+    );
     public static final RegistryObject<Item> WOOD_BOOTS = ITEMS.register("wood_boots",
             () -> new ArmorItem(ModArmorMaterials.WOOD_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Properties()
-                            .durability((ArmorItem.Type.BOOTS.getDurability(4)))));
+                            .durability((ArmorItem.Type.BOOTS.getDurability(4))))
+    );
 
     /* Custom Equipment - Stone Tier */
-    public static final RegistryObject<Item> STONE_HELMET;
-    public static final RegistryObject<Item> STONE_CHESTPLATE;
-    public static final RegistryObject<Item> STONE_LEGGINGS;
-    public static final RegistryObject<Item> STONE_BOOTS;
+    public static final RegistryObject<Item> STONE_HELMET = ITEMS.register("stone_helmet",
+            () -> new ArmorItem(ModArmorMaterials.STONE_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Properties()
+                    .durability(ArmorItem.Type.HELMET.getDurability(9)))
+    );
+    public static final RegistryObject<Item> STONE_CHESTPLATE = ITEMS.register("stone_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.STONE_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Properties()
+                    .durability(ArmorItem.Type.CHESTPLATE.getDurability(9)))
+    );
+    public static final RegistryObject<Item> STONE_LEGGINGS = ITEMS.register("stone_leggings",
+            () -> new ArmorItem(ModArmorMaterials.STONE_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, new Item.Properties()
+                    .durability(ArmorItem.Type.LEGGINGS.getDurability(9)))
+    );
+    public static final RegistryObject<Item> STONE_BOOTS = ITEMS.register("stone_boots",
+            () -> new ArmorItem(ModArmorMaterials.STONE_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Properties()
+                    .durability(ArmorItem.Type.BOOTS.getDurability(9)))
+    );
 
     /* Custom Equipment - Copper Tier */
-    public static final RegistryObject<Item> COPPER_HELMET;
-    public static final RegistryObject<Item> COPPER_CHESTPLATE;
-    public static final RegistryObject<Item> COPPER_LEGGINGS;
-    public static final RegistryObject<Item> COPPER_BOOTS;
+    public static final RegistryObject<Item> COPPER_HELMET = ITEMS.register("copper_helmet",
+            () -> new ArmorItem(ModArmorMaterials.COPPER_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Properties()
+                    .durability(ArmorItem.Type.HELMET.getDurability(13)))
+    );
+    public static final RegistryObject<Item> COPPER_CHESTPLATE = ITEMS.register("copper_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.COPPER_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Properties()
+                    .durability(ArmorItem.Type.CHESTPLATE.getDurability(13)))
+    );
+    public static final RegistryObject<Item> COPPER_LEGGINGS = ITEMS.register("copper_leggings",
+            () -> new ArmorItem(ModArmorMaterials.COPPER_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, new Item.Properties()
+                    .durability(ArmorItem.Type.LEGGINGS.getDurability(13)))
+    );
+    public static final RegistryObject<Item> COPPER_BOOTS = ITEMS.register("copper_boots",
+            () -> new ArmorItem(ModArmorMaterials.COPPER_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Properties()
+                    .durability(ArmorItem.Type.BOOTS.getDurability(13)))
+    );
+
+
+
     public static final RegistryObject<Item> COPPER_SWORD = ITEMS.register("copper_sword",
             () -> new SwordItem(ModToolTiers.COPPER, new Item.Properties()
                     .attributes(SwordItem.createAttributes(ModToolTiers.COPPER, SWORD_ATK_DMG, SWORD_ATK_SPD)))
@@ -79,10 +110,25 @@ public class ModItems {
     );
 
     /* Custom Equipment - Amethyst Tier */
-    public static final RegistryObject<Item> AMETHYST_HELMET;
-    public static final RegistryObject<Item> AMETHYST_CHESTPLATE;
-    public static final RegistryObject<Item> AMETHYST_LEGGINGS;
-    public static final RegistryObject<Item> AMETHYST_BOOTS;
+    public static final RegistryObject<Item> AMETHYST_HELMET = ITEMS.register("amethyst_helmet",
+            () -> new ArmorItem(ModArmorMaterials.AMETHYST_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Properties()
+                    .durability(ArmorItem.Type.HELMET.getDurability(27)))
+    );
+    public static final RegistryObject<Item> AMETHYST_CHESTPLATE = ITEMS.register("amethyst_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.AMETHYST_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Properties()
+                    .durability(ArmorItem.Type.CHESTPLATE.getDurability(27)))
+    );
+    public static final RegistryObject<Item> AMETHYST_LEGGINGS = ITEMS.register("amethyst_leggings",
+            () -> new ArmorItem(ModArmorMaterials.AMETHYST_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, new Item.Properties()
+                    .durability(ArmorItem.Type.LEGGINGS.getDurability(27)))
+    );
+    public static final RegistryObject<Item> AMETHYST_BOOTS = ITEMS.register("amethyst_boots",
+            () -> new ArmorItem(ModArmorMaterials.AMETHYST_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Properties()
+                    .durability(ArmorItem.Type.BOOTS.getDurability(27)))
+    );
+
+
+
     public static final RegistryObject<Item> AMETHYST_SWORD = ITEMS.register("amethyst_sword",
             () -> new SwordItem(ModToolTiers.AMETHYST, new Item.Properties()
                     .attributes(SwordItem.createAttributes(ModToolTiers.AMETHYST, SWORD_ATK_DMG, SWORD_ATK_SPD)))
@@ -105,10 +151,25 @@ public class ModItems {
     );
 
     /* Custom Equipment - Quartz Tier */
-    public static final RegistryObject<Item> QUARTZ_HELMET;
-    public static final RegistryObject<Item> QUARTZ_CHESTPLATE;
-    public static final RegistryObject<Item> QUARTZ_LEGGINGS;
-    public static final RegistryObject<Item> QUARTZ_BOOTS;
+    public static final RegistryObject<Item> QUARTZ_HELMET = ITEMS.register("quartz_helmet",
+            () -> new ArmorItem(ModArmorMaterials.QUARTZ_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Properties()
+                    .durability(ArmorItem.Type.HELMET.getDurability(27)))
+    );
+    public static final RegistryObject<Item> QUARTZ_CHESTPLATE = ITEMS.register("quartz_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.QUARTZ_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Properties()
+                    .durability(ArmorItem.Type.CHESTPLATE.getDurability(27)))
+    );
+    public static final RegistryObject<Item> QUARTZ_LEGGINGS = ITEMS.register("quartz_leggings",
+            () -> new ArmorItem(ModArmorMaterials.QUARTZ_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, new Item.Properties()
+                    .durability(ArmorItem.Type.LEGGINGS.getDurability(27)))
+    );
+    public static final RegistryObject<Item> QUARTZ_BOOTS = ITEMS.register("quartz_boots",
+            () -> new ArmorItem(ModArmorMaterials.QUARTZ_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Properties()
+                    .durability(ArmorItem.Type.BOOTS.getDurability(27)))
+    );
+
+
+
     public static final RegistryObject<Item> QUARTZ_SWORD = ITEMS.register("quartz_sword",
             () -> new SwordItem(ModToolTiers.QUARTZ, new Item.Properties()
                     .attributes(SwordItem.createAttributes(ModToolTiers.QUARTZ, SWORD_ATK_DMG, SWORD_ATK_SPD)))
@@ -131,10 +192,25 @@ public class ModItems {
     );
 
     /* Custom Equipment - Emerald */
-    public static final RegistryObject<Item> EMERALD_HELMET;
-    public static final RegistryObject<Item> EMERALD_CHESTPLATE;
-    public static final RegistryObject<Item> EMERALD_LEGGINGS;
-    public static final RegistryObject<Item> EMERALD_BOOTS;
+    public static final RegistryObject<Item> EMERALD_HELMET = ITEMS.register("emerald_helmet",
+            () -> new ArmorItem(ModArmorMaterials.EMERALD_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Properties()
+                    .durability(ArmorItem.Type.HELMET.getDurability(34)))
+    );
+    public static final RegistryObject<Item> EMERALD_CHESTPLATE = ITEMS.register("emerald_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.EMERALD_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Properties()
+                    .durability(ArmorItem.Type.CHESTPLATE.getDurability(34)))
+    );
+    public static final RegistryObject<Item> EMERALD_LEGGINGS = ITEMS.register("emerald_leggings",
+            () -> new ArmorItem(ModArmorMaterials.EMERALD_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, new Item.Properties()
+                    .durability(ArmorItem.Type.LEGGINGS.getDurability(34)))
+    );
+    public static final RegistryObject<Item> EMERALD_BOOTS = ITEMS.register("emerald_boots",
+            () -> new ArmorItem(ModArmorMaterials.EMERALD_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Properties()
+                    .durability(ArmorItem.Type.BOOTS.getDurability(34)))
+    );
+
+
+
     public static final RegistryObject<Item> EMERALD_SWORD = ITEMS.register("emerald_sword",
             () -> new SwordItem(ModToolTiers.EMERALD, new Item.Properties()
                     .attributes(SwordItem.createAttributes(ModToolTiers.EMERALD, SWORD_ATK_DMG, SWORD_ATK_SPD)))
