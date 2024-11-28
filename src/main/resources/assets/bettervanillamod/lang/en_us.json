@@ -1,4 +1,7 @@
 {
+  "block.bettervanillamod.amethyst_gem_ore": "Amethyst Gem Ore",
+
+
   "item.bettervanillamod.amethyst_gem": "Amethyst Gem",
 
   "item.bettervanillamod.wood_helmet": "Wood Helmet",
@@ -50,6 +53,7 @@
   "item.bettervanillamod.emerald_shovel": "Emerald Shovel",
   "item.bettervanillamod.emerald_axe": "Emerald Axe",
   "item.bettervanillamod.emerald_hoe": "Emerald Hoe",
+
 
   "creativetab.bettervanillamod.tab": "BetterVanillaMod Tab"
 }
