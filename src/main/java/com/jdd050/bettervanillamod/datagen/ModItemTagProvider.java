@@ -29,6 +29,46 @@ public class ModItemTagProvider extends ItemTagsProvider {
                     case "helmet", "chestplate", "leggings", "boots":
                         tag(ItemTags.TRIMMABLE_ARMOR)
                                 .add(item.get());
+                        tag(ItemTags.ARMOR_ENCHANTABLE)
+                                .add(item.get());
+                        break;
+                    case "sword":
+                        tag(ItemTags.SWORDS)
+                                .add(item.get());
+                        tag(ItemTags.SWORD_ENCHANTABLE);
+                        break;
+                    case "pickaxe":
+                        tag(ItemTags.PICKAXES)
+                                .add(item.get());
+                        tag(ItemTags.MINING_ENCHANTABLE)
+                                .add(item.get());
+                        tag(ItemTags.MINING_LOOT_ENCHANTABLE)
+                                .add(item.get());
+                        break;
+                    case "shovel":
+                        tag(ItemTags.SHOVELS)
+                                .add(item.get());
+                        tag(ItemTags.MINING_ENCHANTABLE)
+                                .add(item.get());
+                        tag(ItemTags.MINING_LOOT_ENCHANTABLE)
+                                .add(item.get());
+                        break;
+                    case "axe":
+                        tag(ItemTags.AXES)
+                                .add(item.get());
+                        tag(ItemTags.MINING_ENCHANTABLE)
+                                .add(item.get());
+                        tag(ItemTags.MINING_LOOT_ENCHANTABLE)
+                                .add(item.get());
+                        break;
+                    case "hoe":
+                        tag(ItemTags.HOES)
+                                .add(item.get());
+                        tag(ItemTags.MINING_ENCHANTABLE)
+                                .add(item.get());
+                        tag(ItemTags.MINING_LOOT_ENCHANTABLE)
+                                .add(item.get());
+                        break;
                 }
             }
 
