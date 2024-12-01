@@ -37,6 +37,15 @@ public class ModArmorMaterials {
                 attribute.put(ArmorItem.Type.BODY, 1);
             }), 13, 1, 0.05f, () -> Items.STONE, SoundEvents.STONE_PLACE); // TODO: account for all stone
 
+    public static final Holder<ArmorMaterial> NETHERRACK_ARMOR_MATERIAL = register("netherrack", Util.make(new EnumMap<>(ArmorItem.Type.class),
+            attribute -> {
+                attribute.put(ArmorItem.Type.BOOTS, 1);
+                attribute.put(ArmorItem.Type.LEGGINGS, 3);
+                attribute.put(ArmorItem.Type.CHESTPLATE, 4);
+                attribute.put(ArmorItem.Type.HELMET, 1);
+                attribute.put(ArmorItem.Type.BODY, 3);
+            }), 5, 0, 0.05f, () -> Items.NETHERRACK, SoundEvents.NETHERRACK_PLACE);
+
     public static final Holder<ArmorMaterial> COPPER_ARMOR_MATERIAL = register("copper", Util.make(new EnumMap<>(ArmorItem.Type.class),
             attribute -> {
                 attribute.put(ArmorItem.Type.BOOTS, 2);

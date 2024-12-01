@@ -11,6 +11,8 @@ import net.minecraft.world.level.block.Block;
 public class ModTags {
     public static class Blocks {
         // tool tier tags
+        public static final TagKey<Block> NEEDS_NETHERRACK_TOOL = createTag("needs_netherrack_tool");
+        public static final TagKey<Block> INCORRECT_FOR_NETHERRACK_TOOL = createTag("incorrect_for_netherrack_tool");
         public static final TagKey<Block> NEEDS_COPPER_TOOL = createTag("needs_copper_tool");
         public static final TagKey<Block> INCORRECT_FOR_COPPER_TOOL = createTag("incorrect_for_copper_tool");
         public static final TagKey<Block> NEEDS_AMETHYST_TOOL = createTag("needs_amethyst_tool");

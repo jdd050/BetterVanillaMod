@@ -6,6 +6,8 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
@@ -19,6 +21,168 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         super(pOutput, pRegistries);
     }
 
+    private static void makeHelmetRecipe(RecipeOutput pRecipeOutput, Item result, Item material, String unlockRequirement) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
+                .pattern("XXX")
+                .pattern("X X")
+                .pattern("   ")
+                .define('X', material)
+                .unlockedBy(unlockRequirement, has(material)).save(pRecipeOutput);
+    }
+
+    private static void makeHelmetRecipe(RecipeOutput pRecipeOutput, Item result, TagKey<Item> material, String unlockRequirement) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
+                .pattern("XXX")
+                .pattern("X X")
+                .pattern("   ")
+                .define('X', material)
+                .unlockedBy(unlockRequirement, has(material)).save(pRecipeOutput);
+    }
+
+    private static void makeChestplateRecipe(RecipeOutput pRecipeOutput, Item result, Item material, String unlockRequirement) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
+                .pattern("X X")
+                .pattern("XXX")
+                .pattern("XXX")
+                .define('X', material)
+                .unlockedBy(unlockRequirement, has(material)).save(pRecipeOutput);
+    }
+
+    private static void makeChestplateRecipe(RecipeOutput pRecipeOutput, Item result, TagKey<Item> material, String unlockRequirement) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
+                .pattern("X X")
+                .pattern("XXX")
+                .pattern("XXX")
+                .define('X', material)
+                .unlockedBy(unlockRequirement, has(material)).save(pRecipeOutput);
+    }
+
+    private static void makeLeggingRecipe(RecipeOutput pRecipeOutput, Item result, Item material, String unlockRequirement) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
+                .pattern("XXX")
+                .pattern("X X")
+                .pattern("X X")
+                .define('X', material)
+                .unlockedBy(unlockRequirement, has(material)).save(pRecipeOutput);
+    }
+
+    private static void makeLeggingRecipe(RecipeOutput pRecipeOutput, Item result, TagKey<Item> material, String unlockRequirement) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
+                .pattern("XXX")
+                .pattern("X X")
+                .pattern("X X")
+                .define('X', material)
+                .unlockedBy(unlockRequirement, has(material)).save(pRecipeOutput);
+    }
+
+    private static void makeBootsRecipe(RecipeOutput pRecipeOutput, Item result, Item material, String unlockRequirement) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
+                .pattern("   ")
+                .pattern("X X")
+                .pattern("X X")
+                .define('X', material)
+                .unlockedBy(unlockRequirement, has(material)).save(pRecipeOutput);
+    }
+
+    private static void makeBootsRecipe(RecipeOutput pRecipeOutput, Item result, TagKey<Item> material, String unlockRequirement) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
+                .pattern("   ")
+                .pattern("X X")
+                .pattern("X X")
+                .define('X', material)
+                .unlockedBy(unlockRequirement, has(material)).save(pRecipeOutput);
+    }
+
+    private static void makeSwordRecipe(RecipeOutput pRecipeOutput, Item result, Item material, String unlockRequirement) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
+                .pattern(" X ")
+                .pattern(" X ")
+                .pattern(" Y ")
+                .define('X', material)
+                .define('Y', Items.STICK)
+                .unlockedBy(unlockRequirement, has(material)).save(pRecipeOutput);
+    }
+
+    private static void makeSwordRecipe(RecipeOutput pRecipeOutput, Item result, TagKey<Item> material, String unlockRequirement) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
+                .pattern(" X ")
+                .pattern(" X ")
+                .pattern(" Y ")
+                .define('X', material)
+                .define('Y', Items.STICK)
+                .unlockedBy(unlockRequirement, has(material)).save(pRecipeOutput);
+    }
+
+    private static void makePickaxeRecipe(RecipeOutput pRecipeOutput, Item result, Item material, String unlockRequirement) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result)
+                .pattern("XXX")
+                .pattern(" Y ")
+                .pattern(" Y ")
+                .define('X', material)
+                .define('Y', Items.STICK)
+                .unlockedBy(unlockRequirement, has(material)).save(pRecipeOutput);
+    }
+
+    private static void makePickaxeRecipe(RecipeOutput pRecipeOutput, Item result, TagKey<Item> material, String unlockRequirement) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result)
+                .pattern("XXX")
+                .pattern(" Y ")
+                .pattern(" Y ")
+                .define('X', material)
+                .define('Y', Items.STICK)
+                .unlockedBy(unlockRequirement, has(material)).save(pRecipeOutput);
+    }
+
+    private static void makeShovelRecipe(RecipeOutput pRecipeOutput, Item result, Item material, String unlockRequirement) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result)
+                .pattern(" X ")
+                .pattern(" Y ")
+                .pattern(" Y ")
+                .define('X', material)
+                .define('Y', Items.STICK)
+                .unlockedBy(unlockRequirement, has(material)).save(pRecipeOutput);
+    }
+
+    private static void makeShovelRecipe(RecipeOutput pRecipeOutput, Item result, TagKey<Item> material, String unlockRequirement) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result)
+                .pattern(" X ")
+                .pattern(" Y ")
+                .pattern(" Y ")
+                .define('X', material)
+                .define('Y', Items.STICK)
+                .unlockedBy(unlockRequirement, has(material)).save(pRecipeOutput);
+    }
+
+    private static void makeAxeRecipe(RecipeOutput pRecipeOutput, Item result, Item material, String unlockRequirement) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result)
+                .pattern("XX ")
+                .pattern("XY ")
+                .pattern(" Y ")
+                .define('X', material)
+                .define('Y', Items.STICK)
+                .unlockedBy(unlockRequirement, has(material)).save(pRecipeOutput);
+    }
+
+    private static void makeAxeRecipe(RecipeOutput pRecipeOutput, Item result, TagKey<Item> material, String unlockRequirement) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result)
+                .pattern("XX ")
+                .pattern("XY ")
+                .pattern(" Y ")
+                .define('X', material)
+                .define('Y', Items.STICK)
+                .unlockedBy(unlockRequirement, has(material)).save(pRecipeOutput);
+    }
+
+    private static void makeHoeRecipe(RecipeOutput pRecipeOutput, Item result, Item material, String unlockRequirement) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result)
+                .pattern("XX ")
+                .pattern(" Y ")
+                .pattern(" Y ")
+                .define('X', material)
+                .define('Y', Items.STICK)
+                .unlockedBy(unlockRequirement, has(material)).save(pRecipeOutput);
+    }
+
     @Override
     protected void buildRecipes(RecipeOutput pRecipeOutput) {
         // smelting list
@@ -26,317 +190,91 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         /* MATERIAL RECIPES */
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.AMETHYST_GEM.get())
-                        .requires(Items.AMETHYST_SHARD, 2)
-                                .unlockedBy("has_amethyst_shard", has(Items.AMETHYST_SHARD)).save(pRecipeOutput);
+                .requires(Items.AMETHYST_SHARD, 2)
+                .unlockedBy("has_amethyst_shard", has(Items.AMETHYST_SHARD)).save(pRecipeOutput);
 
         /* WOOD TIER RECIPES */
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.WOOD_HELMET.get())
-                .pattern("PPP")
-                .pattern("P P")
-                .pattern("   ")
-                .define('P', ItemTags.PLANKS)
-                .unlockedBy("has_planks", has(ItemTags.PLANKS)).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.WOOD_CHESTPLATE.get())
-                .pattern("P P")
-                .pattern("PPP")
-                .pattern("PPP")
-                .define('P', ItemTags.PLANKS)
-                .unlockedBy("has_planks", has(ItemTags.PLANKS)).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.WOOD_LEGGINGS.get())
-                .pattern("PPP")
-                .pattern("P P")
-                .pattern("P P")
-                .define('P', ItemTags.PLANKS)
-                .unlockedBy("has_planks", has(ItemTags.PLANKS)).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.WOOD_BOOTS.get())
-                .pattern("   ")
-                .pattern("P P")
-                .pattern("P P")
-                .define('P', ItemTags.PLANKS)
-                .unlockedBy("has_planks", has(ItemTags.PLANKS)).save(pRecipeOutput);
+        makeHelmetRecipe(pRecipeOutput, ModItems.WOOD_HELMET.get(), ItemTags.PLANKS, "has_planks");
+        makeChestplateRecipe(pRecipeOutput, ModItems.WOOD_CHESTPLATE.get(), ItemTags.PLANKS, "has_planks");
+        makeLeggingRecipe(pRecipeOutput, ModItems.WOOD_LEGGINGS.get(), ItemTags.PLANKS, "has_planks");
+        makeBootsRecipe(pRecipeOutput, ModItems.WOOD_BOOTS.get(), ItemTags.PLANKS, "has_planks");
 
         /* STONE TIER RECIPES */
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.STONE_HELMET.get())
-                .pattern("SSS")
-                .pattern("S S")
-                .pattern("   ")
-                .define('S', Items.STONE)
-                .unlockedBy("has_stone", has(Items.STONE)).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.STONE_CHESTPLATE.get())
-                .pattern("S S")
-                .pattern("SSS")
-                .pattern("SSS")
-                .define('S', Items.STONE)
-                .unlockedBy("has_stone", has(Items.STONE)).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.STONE_LEGGINGS.get())
-                .pattern("SSS")
-                .pattern("S S")
-                .pattern("S S")
-                .define('S', Items.STONE)
-                .unlockedBy("has_stone", has(Items.STONE)).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.STONE_BOOTS.get())
-                .pattern("   ")
-                .pattern("S S")
-                .pattern("S S")
-                .define('S', Items.STONE)
-                .unlockedBy("has_stone", has(Items.STONE)).save(pRecipeOutput);
+        makeHelmetRecipe(pRecipeOutput, ModItems.STONE_HELMET.get(), Items.STONE, "has_stone");
+        makeChestplateRecipe(pRecipeOutput, ModItems.STONE_CHESTPLATE.get(), Items.STONE, "has_stone");
+        makeLeggingRecipe(pRecipeOutput, ModItems.STONE_LEGGINGS.get(), Items.STONE, "has_stone");
+        makeBootsRecipe(pRecipeOutput, ModItems.STONE_BOOTS.get(), Items.STONE, "has_stone");
+
+
+        /* NETHERRACK TIER RECIPES */
+        // armor
+        makeHelmetRecipe(pRecipeOutput, ModItems.NETHERRACK_HELMET.get(), Items.NETHERRACK, "has_netherrack");
+        makeChestplateRecipe(pRecipeOutput, ModItems.NETHERRACK_CHESTPLATE.get(), Items.NETHERRACK, "has_netherrack");
+        makeLeggingRecipe(pRecipeOutput, ModItems.NETHERRACK_LEGGINGS.get(), Items.NETHERRACK, "has_netherrack");
+        makeBootsRecipe(pRecipeOutput, ModItems.NETHERRACK_BOOTS.get(), Items.NETHERRACK, "has_netherrack");
+
+        // tools
+        makeSwordRecipe(pRecipeOutput, ModItems.NETHERRACK_SWORD.get(), Items.NETHERRACK, "has_netherrack");
+        makePickaxeRecipe(pRecipeOutput, ModItems.NETHERRACK_PICKAXE.get(), Items.NETHERRACK, "has_netherrack");
+        makeShovelRecipe(pRecipeOutput, ModItems.NETHERRACK_SHOVEL.get(), Items.NETHERRACK, "has_netherrack");
+        makeAxeRecipe(pRecipeOutput, ModItems.NETHERRACK_AXE.get(), Items.NETHERRACK, "has_netherrack");
+        makeHoeRecipe(pRecipeOutput, ModItems.NETHERRACK_HOE.get(), Items.NETHERRACK, "has_netherrack");
 
         /* COPPER TIER RECIPES */
         // armor
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.COPPER_HELMET.get())
-                .pattern("CCC")
-                .pattern("C C")
-                .pattern("   ")
-                .define('C', Items.COPPER_INGOT)
-                .unlockedBy("has_copper_ingot", has(Items.COPPER_INGOT)).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.COPPER_CHESTPLATE.get())
-                .pattern("C C")
-                .pattern("CCC")
-                .pattern("CCC")
-                .define('C', Items.COPPER_INGOT)
-                .unlockedBy("has_copper_ingot", has(Items.COPPER_INGOT)).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.COPPER_LEGGINGS.get())
-                .pattern("CCC")
-                .pattern("C C")
-                .pattern("C C")
-                .define('C', Items.COPPER_INGOT)
-                .unlockedBy("has_copper_ingot", has(Items.COPPER_INGOT)).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.COPPER_BOOTS.get())
-                .pattern("   ")
-                .pattern("C C")
-                .pattern("C C")
-                .define('C', Items.COPPER_INGOT)
-                .unlockedBy("has_copper_ingot", has(Items.COPPER_INGOT)).save(pRecipeOutput);
+        makeHelmetRecipe(pRecipeOutput, ModItems.COPPER_HELMET.get(), Items.COPPER_INGOT, "has_copper_ingot");
+        makeChestplateRecipe(pRecipeOutput, ModItems.COPPER_CHESTPLATE.get(), Items.COPPER_INGOT, "has_copper_ingot");
+        makeLeggingRecipe(pRecipeOutput, ModItems.COPPER_LEGGINGS.get(), Items.COPPER_INGOT, "has_copper_ingot");
+        makeBootsRecipe(pRecipeOutput, ModItems.COPPER_BOOTS.get(), Items.COPPER_INGOT, "has_copper_ingot");
 
         // tools
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.COPPER_SWORD.get())
-                .pattern(" C ")
-                .pattern(" C ")
-                .pattern(" S ")
-                .define('C', Items.COPPER_INGOT)
-                .define('S', Items.STICK)
-                .unlockedBy("has_copper_ingot", has(Items.COPPER_INGOT)).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPER_PICKAXE.get())
-                .pattern("CCC")
-                .pattern(" S ")
-                .pattern(" S ")
-                .define('C', Items.COPPER_INGOT)
-                .define('S', Items.STICK)
-                .unlockedBy("has_copper_ingot", has(Items.COPPER_INGOT)).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPER_SHOVEL.get())
-                .pattern(" C ")
-                .pattern(" S ")
-                .pattern(" S ")
-                .define('C', Items.COPPER_INGOT)
-                .define('S', Items.STICK)
-                .unlockedBy("has_copper_ingot", has(Items.COPPER_INGOT)).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPER_AXE.get())
-                .pattern("CC ")
-                .pattern("CS ")
-                .pattern(" S ")
-                .define('C', Items.COPPER_INGOT)
-                .define('S', Items.STICK)
-                .unlockedBy("has_copper_ingot", has(Items.COPPER_INGOT)).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.COPPER_HOE.get())
-                .pattern("CC ")
-                .pattern(" S ")
-                .pattern(" S ")
-                .define('C', Items.COPPER_INGOT)
-                .define('S', Items.STICK)
-                .unlockedBy("has_copper_ingot", has(Items.COPPER_INGOT)).save(pRecipeOutput);
-
+        makeSwordRecipe(pRecipeOutput, ModItems.COPPER_SWORD.get(), Items.COPPER_INGOT, "has_copper_ingot");
+        makePickaxeRecipe(pRecipeOutput, ModItems.COPPER_PICKAXE.get(), Items.COPPER_INGOT, "has_copper_ingot");
+        makeShovelRecipe(pRecipeOutput, ModItems.COPPER_SHOVEL.get(), Items.COPPER_INGOT, "has_copper_ingot");
+        makeAxeRecipe(pRecipeOutput, ModItems.COPPER_AXE.get(), Items.COPPER_INGOT, "has_copper_ingot");
+        makeHoeRecipe(pRecipeOutput, ModItems.COPPER_HOE.get(), Items.COPPER_INGOT, "has_copper_ingot");
 
         /* AMETHYST TIER RECIPES */
-        // Armor
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.AMETHYST_HELMET.get())
-                .pattern("AAA")
-                .pattern("A A")
-                .pattern("   ")
-                .define('A', ModItems.AMETHYST_GEM.get())
-                .unlockedBy("has_amethyst_gem", has(ModItems.AMETHYST_GEM.get())).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.AMETHYST_CHESTPLATE.get())
-                .pattern("A A")
-                .pattern("AAA")
-                .pattern("AAA")
-                .define('A', ModItems.AMETHYST_GEM.get())
-                .unlockedBy("has_amethyst_gem", has(ModItems.AMETHYST_GEM.get())).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.AMETHYST_LEGGINGS.get())
-                .pattern("AAA")
-                .pattern("A A")
-                .pattern("A A")
-                .define('A', ModItems.AMETHYST_GEM.get())
-                .unlockedBy("has_amethyst_gem", has(ModItems.AMETHYST_GEM.get())).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.AMETHYST_BOOTS.get())
-                .pattern("   ")
-                .pattern("A A")
-                .pattern("A A")
-                .define('A', ModItems.AMETHYST_GEM.get())
-                .unlockedBy("has_amethyst_gem", has(ModItems.AMETHYST_GEM.get())).save(pRecipeOutput);
+        // armor
+        makeHelmetRecipe(pRecipeOutput, ModItems.AMETHYST_HELMET.get(), ModItems.AMETHYST_GEM.get(), "has_amethyst_gem");
+        makeChestplateRecipe(pRecipeOutput, ModItems.AMETHYST_CHESTPLATE.get(), ModItems.AMETHYST_GEM.get(), "has_amethyst_gem");
+        makeLeggingRecipe(pRecipeOutput, ModItems.AMETHYST_LEGGINGS.get(), ModItems.AMETHYST_GEM.get(), "has_amethyst_gem");
+        makeBootsRecipe(pRecipeOutput, ModItems.AMETHYST_BOOTS.get(), ModItems.AMETHYST_GEM.get(), "has_amethyst_gem");
 
         // tools
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.AMETHYST_SWORD.get())
-                .pattern(" A ")
-                .pattern(" A ")
-                .pattern(" S ")
-                .define('A', ModItems.AMETHYST_GEM.get())
-                .define('S', Items.STICK)
-                .unlockedBy("has_amethyst_gem", has(ModItems.AMETHYST_GEM.get())).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.AMETHYST_PICKAXE.get())
-                .pattern("AAA")
-                .pattern(" S ")
-                .pattern(" S ")
-                .define('A', ModItems.AMETHYST_GEM.get())
-                .define('S', Items.STICK)
-                .unlockedBy("has_amethyst_gem", has(ModItems.AMETHYST_GEM.get())).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.AMETHYST_SHOVEL.get())
-                .pattern(" A ")
-                .pattern(" S ")
-                .pattern(" S ")
-                .define('A', ModItems.AMETHYST_GEM.get())
-                .define('S', Items.STICK)
-                .unlockedBy("has_amethyst_gem", has(ModItems.AMETHYST_GEM.get())).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.AMETHYST_AXE.get())
-                .pattern("AA ")
-                .pattern("AS ")
-                .pattern(" S ")
-                .define('A', ModItems.AMETHYST_GEM.get())
-                .define('S', Items.STICK)
-                .unlockedBy("has_amethyst_gem", has(ModItems.AMETHYST_GEM.get())).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.AMETHYST_HOE.get())
-                .pattern("AA ")
-                .pattern(" S ")
-                .pattern(" S ")
-                .define('A', ModItems.AMETHYST_GEM.get())
-                .define('S', Items.STICK)
-                .unlockedBy("has_amethyst_gem", has(ModItems.AMETHYST_GEM.get())).save(pRecipeOutput);
+        makeSwordRecipe(pRecipeOutput, ModItems.AMETHYST_SWORD.get(), ModItems.AMETHYST_GEM.get(), "has_amethyst_gem");
+        makePickaxeRecipe(pRecipeOutput, ModItems.AMETHYST_PICKAXE.get(), ModItems.AMETHYST_GEM.get(), "has_amethyst_gem");
+        makeShovelRecipe(pRecipeOutput, ModItems.AMETHYST_SHOVEL.get(), ModItems.AMETHYST_GEM.get(), "has_amethyst_gem");
+        makeAxeRecipe(pRecipeOutput, ModItems.AMETHYST_AXE.get(), ModItems.AMETHYST_GEM.get(), "has_amethyst_gem");
+        makeHoeRecipe(pRecipeOutput, ModItems.AMETHYST_HOE.get(), ModItems.AMETHYST_GEM.get(), "has_amethyst_gem");
 
         /* QUARTZ TIER RECIPES */
-        // Armor
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.QUARTZ_HELMET.get())
-                .pattern("QQQ")
-                .pattern("Q Q")
-                .pattern("   ")
-                .define('Q', Items.QUARTZ)
-                .unlockedBy("has_quartz", has(Items.QUARTZ)).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.QUARTZ_CHESTPLATE.get())
-                .pattern("Q Q")
-                .pattern("QQQ")
-                .pattern("QQQ")
-                .define('Q', Items.QUARTZ)
-                .unlockedBy("has_quartz", has(Items.QUARTZ)).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.QUARTZ_LEGGINGS.get())
-                .pattern("QQQ")
-                .pattern("Q Q")
-                .pattern("Q Q")
-                .define('Q', Items.QUARTZ)
-                .unlockedBy("has_quartz", has(Items.QUARTZ)).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.QUARTZ_BOOTS.get())
-                .pattern("   ")
-                .pattern("Q Q")
-                .pattern("Q Q")
-                .define('Q', Items.QUARTZ)
-                .unlockedBy("has_quartz", has(Items.QUARTZ)).save(pRecipeOutput);
+        // armor
+        makeHelmetRecipe(pRecipeOutput, ModItems.QUARTZ_HELMET.get(), Items.QUARTZ, "has_quartz");
+        makeChestplateRecipe(pRecipeOutput, ModItems.QUARTZ_CHESTPLATE.get(), Items.QUARTZ, "has_quartz");
+        makeLeggingRecipe(pRecipeOutput, ModItems.QUARTZ_LEGGINGS.get(), Items.QUARTZ, "has_quartz");
+        makeBootsRecipe(pRecipeOutput, ModItems.QUARTZ_BOOTS.get(), Items.QUARTZ, "has_quartz");
 
-        // Tools
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.QUARTZ_SWORD.get())
-                .pattern(" Q ")
-                .pattern(" Q ")
-                .pattern(" S ")
-                .define('Q', Items.QUARTZ)
-                .define('S', Items.STICK)
-                .unlockedBy("has_quartz", has(Items.QUARTZ)).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.QUARTZ_PICKAXE.get())
-                .pattern("QQQ")
-                .pattern(" S ")
-                .pattern(" S ")
-                .define('Q', Items.QUARTZ)
-                .define('S', Items.STICK)
-                .unlockedBy("has_quartz", has(Items.QUARTZ)).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.QUARTZ_SHOVEL.get())
-                .pattern(" Q ")
-                .pattern(" S ")
-                .pattern(" S ")
-                .define('Q', Items.QUARTZ)
-                .define('S', Items.STICK)
-                .unlockedBy("has_quartz", has(Items.QUARTZ)).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.QUARTZ_AXE.get())
-                .pattern("QQ ")
-                .pattern("QS ")
-                .pattern(" S ")
-                .define('Q', Items.QUARTZ)
-                .define('S', Items.STICK)
-                .unlockedBy("has_quartz", has(Items.QUARTZ)).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.QUARTZ_HOE.get())
-                .pattern("QQ ")
-                .pattern(" S ")
-                .pattern(" S ")
-                .define('Q', Items.QUARTZ)
-                .define('S', Items.STICK)
-                .unlockedBy("has_quartz", has(Items.QUARTZ)).save(pRecipeOutput);
+        // tools
+        makeSwordRecipe(pRecipeOutput, ModItems.QUARTZ_SWORD.get(), Items.QUARTZ, "has_quartz");
+        makePickaxeRecipe(pRecipeOutput, ModItems.QUARTZ_PICKAXE.get(), Items.QUARTZ, "has_quartz");
+        makeShovelRecipe(pRecipeOutput, ModItems.QUARTZ_SHOVEL.get(), Items.QUARTZ, "has_quartz");
+        makeAxeRecipe(pRecipeOutput, ModItems.QUARTZ_AXE.get(), Items.QUARTZ, "has_quartz");
+        makeHoeRecipe(pRecipeOutput, ModItems.QUARTZ_HOE.get(), Items.QUARTZ, "has_quartz");
 
         /* EMERALD TIER RECIPES */
-        // Armor
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.EMERALD_HELMET.get())
-                .pattern("EEE")
-                .pattern("E E")
-                .pattern("   ")
-                .define('E', Items.EMERALD)
-                .unlockedBy("has_emerald", has(Items.EMERALD)).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.EMERALD_CHESTPLATE.get())
-                .pattern("E E")
-                .pattern("EEE")
-                .pattern("EEE")
-                .define('E', Items.EMERALD)
-                .unlockedBy("has_emerald", has(Items.EMERALD)).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.EMERALD_LEGGINGS.get())
-                .pattern("EEE")
-                .pattern("E E")
-                .pattern("E E")
-                .define('E', Items.EMERALD)
-                .unlockedBy("has_emerald", has(Items.EMERALD)).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.EMERALD_BOOTS.get())
-                .pattern("   ")
-                .pattern("E E")
-                .pattern("E E")
-                .define('E', Items.EMERALD)
-                .unlockedBy("has_emerald", has(Items.EMERALD)).save(pRecipeOutput);
+        // armor
+        makeHelmetRecipe(pRecipeOutput, ModItems.EMERALD_HELMET.get(), Items.EMERALD, "has_emerald");
+        makeChestplateRecipe(pRecipeOutput, ModItems.EMERALD_CHESTPLATE.get(), Items.EMERALD, "has_emerald");
+        makeLeggingRecipe(pRecipeOutput, ModItems.EMERALD_LEGGINGS.get(), Items.EMERALD, "has_emerald");
+        makeBootsRecipe(pRecipeOutput, ModItems.EMERALD_BOOTS.get(), Items.EMERALD, "has_emerald");
 
-        // Tools
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.EMERALD_SWORD.get())
-                .pattern(" E ")
-                .pattern(" E ")
-                .pattern(" S ")
-                .define('E', Items.EMERALD)
-                .define('S', Items.STICK)
-                .unlockedBy("has_emerald", has(Items.EMERALD)).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.EMERALD_PICKAXE.get())
-                .pattern("EEE")
-                .pattern(" E ")
-                .pattern(" S ")
-                .define('E', Items.EMERALD)
-                .define('S', Items.STICK)
-                .unlockedBy("has_emerald", has(Items.EMERALD)).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.EMERALD_SHOVEL.get())
-                .pattern(" E ")
-                .pattern(" S ")
-                .pattern(" S ")
-                .define('E', Items.EMERALD)
-                .define('S', Items.STICK)
-                .unlockedBy("has_emerald", has(Items.EMERALD)).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.EMERALD_AXE.get())
-                .pattern("EE ")
-                .pattern("ES ")
-                .pattern(" S ")
-                .define('E', Items.EMERALD)
-                .define('S', Items.STICK)
-                .unlockedBy("has_emerald", has(Items.EMERALD)).save(pRecipeOutput);
-        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.EMERALD_HOE.get())
-                .pattern("EE ")
-                .pattern(" S ")
-                .pattern(" S ")
-                .define('E', Items.EMERALD)
-                .define('S', Items.STICK)
-                .unlockedBy("has_emerald", has(Items.EMERALD)).save(pRecipeOutput);
+        // tools
+        makeSwordRecipe(pRecipeOutput, ModItems.EMERALD_SWORD.get(), Items.EMERALD, "has_emerald");
+        makePickaxeRecipe(pRecipeOutput, ModItems.EMERALD_PICKAXE.get(), Items.EMERALD, "has_emerald");
+        makeShovelRecipe(pRecipeOutput, ModItems.EMERALD_SHOVEL.get(), Items.EMERALD, "has_emerald");
+        makeAxeRecipe(pRecipeOutput, ModItems.EMERALD_AXE.get(), Items.EMERALD, "has_emerald");
+        makeHoeRecipe(pRecipeOutput, ModItems.EMERALD_HOE.get(), Items.EMERALD, "has_emerald");
     }
 
     /*

@@ -37,6 +37,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(ModTags.Blocks.NEEDS_EMERALD_TOOL)
                 .addTag(BlockTags.NEEDS_DIAMOND_TOOL);
 
+        tag(ModTags.Blocks.NEEDS_NETHERRACK_TOOL)
+                .addTag(BlockTags.NEEDS_STONE_TOOL);
+
         tag(ModTags.Blocks.INCORRECT_FOR_COPPER_TOOL)
                 .addTag(BlockTags.INCORRECT_FOR_IRON_TOOL)
                 .remove(ModTags.Blocks.NEEDS_COPPER_TOOL);
@@ -52,5 +55,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(ModTags.Blocks.INCORRECT_FOR_EMERALD_TOOL)
                 .addTag(BlockTags.INCORRECT_FOR_DIAMOND_TOOL)
                 .remove(ModTags.Blocks.NEEDS_EMERALD_TOOL);
+
+        tag(ModTags.Blocks.INCORRECT_FOR_NETHERRACK_TOOL)
+                .addTag(BlockTags.INCORRECT_FOR_STONE_TOOL)
+                .remove(ModTags.Blocks.NEEDS_NETHERRACK_TOOL);
     }
 }

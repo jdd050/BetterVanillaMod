@@ -7,6 +7,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.rmi.registry.Registry;
+
 public class ModItems {
     // fields
     public static final int SWORD_ATK_DMG = 3;
@@ -67,6 +69,46 @@ public class ModItems {
             () -> new ArmorItem(ModArmorMaterials.STONE_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Properties()
                     .durability(ArmorItem.Type.BOOTS.getDurability(9)))
     );
+
+    /* Custom Equipment - Netherrack Tier */
+    public static final RegistryObject<Item> NETHERRACK_HELMET = ITEMS.register("netherrack_helmet",
+            () -> new ArmorItem(ModArmorMaterials.NETHERRACK_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Properties()
+                    .durability(ArmorItem.Type.HELMET.getDurability(11)))
+    );
+    public static final RegistryObject<Item> NETHERRACK_CHESTPLATE = ITEMS.register("netherrack_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.NETHERRACK_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Properties()
+                    .durability(ArmorItem.Type.CHESTPLATE.getDurability(11)))
+    );
+    public static final RegistryObject<Item> NETHERRACK_LEGGINGS = ITEMS.register("netherrack_leggings",
+            () -> new ArmorItem(ModArmorMaterials.NETHERRACK_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, new Item.Properties()
+                    .durability(ArmorItem.Type.LEGGINGS.getDurability(11)))
+    );
+    public static final RegistryObject<Item> NETHERRACK_BOOTS = ITEMS.register("netherrack_boots",
+            () -> new ArmorItem(ModArmorMaterials.NETHERRACK_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Properties()
+                    .durability(ArmorItem.Type.BOOTS.getDurability(11)))
+    );
+
+    public static final RegistryObject<Item> NETHERRACK_SWORD = ITEMS.register("netherrack_sword",
+            () -> new SwordItem(ModToolTiers.NETHERRACK, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModToolTiers.NETHERRACK, SWORD_ATK_DMG, SWORD_ATK_SPD))
+            ));
+    public static final RegistryObject<Item> NETHERRACK_PICKAXE = ITEMS.register("netherrack_pickaxe",
+            () -> new PickaxeItem(ModToolTiers.NETHERRACK, new Item.Properties()
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.NETHERRACK, PICKAXE_ATK_DMG, PICKAXE_ATK_SPD))
+            ));
+    public static final RegistryObject<Item> NETHERRACK_SHOVEL = ITEMS.register("netherrack_shovel",
+            () -> new ShovelItem(ModToolTiers.NETHERRACK, new Item.Properties()
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.NETHERRACK, SHOVEL_ATK_DMG, SHOVEL_ATK_SPD))
+            ));
+    public static final RegistryObject<Item> NETHERRACK_AXE = ITEMS.register("netherrack_axe",
+            () -> new AxeItem(ModToolTiers.NETHERRACK, new Item.Properties()
+                    .attributes(AxeItem.createAttributes(ModToolTiers.NETHERRACK, AXE_ATK_DMG, AXE_ATK_SPD))
+            ));
+    public static final RegistryObject<Item> NETHERRACK_HOE = ITEMS.register("netherrack_hoe",
+            () -> new HoeItem(ModToolTiers.NETHERRACK, new Item.Properties()
+                    .attributes(HoeItem.createAttributes(ModToolTiers.NETHERRACK, HOE_ATK_DMG, HOE_ATK_SPD))
+            ));
+
 
     /* Custom Equipment - Copper Tier */
     public static final RegistryObject<Item> COPPER_HELMET = ITEMS.register("copper_helmet",
