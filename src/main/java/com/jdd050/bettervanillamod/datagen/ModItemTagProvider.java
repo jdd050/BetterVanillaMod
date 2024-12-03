@@ -26,7 +26,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
             String[] parts = item.getId().toString().split("_");
             for (String part : parts) {
                 switch (part) {
-                    case "helmet", "chestplate", "leggings", "boots":
+                    case "helmet":
                         tag(ItemTags.TRIMMABLE_ARMOR)
                                 .add(item.get());
                         tag(ItemTags.ARMOR_ENCHANTABLE)
@@ -35,11 +35,36 @@ public class ModItemTagProvider extends ItemTagsProvider {
                                 .add(item.get());
                         tag(ItemTags.HEAD_ARMOR_ENCHANTABLE)
                                 .add(item.get());
+                        break;
+                    case "chestplate":
+                        tag(ItemTags.TRIMMABLE_ARMOR)
+                                .add(item.get());
+                        tag(ItemTags.ARMOR_ENCHANTABLE)
+                                .add(item.get());
+                        tag(ItemTags.DURABILITY_ENCHANTABLE)
+                                .add(item.get());
                         tag(ItemTags.CHEST_ARMOR_ENCHANTABLE)
+                                .add(item.get());
+                        break;
+                    case "leggings":
+                        tag(ItemTags.TRIMMABLE_ARMOR)
+                                .add(item.get());
+                        tag(ItemTags.ARMOR_ENCHANTABLE)
+                                .add(item.get());
+                        tag(ItemTags.DURABILITY_ENCHANTABLE)
+                                .add(item.get());
+                        tag(ItemTags.LEG_ARMOR_ENCHANTABLE)
+                                .add(item.get());
+                        break;
+                    case "boots":
+                        tag(ItemTags.TRIMMABLE_ARMOR)
+                                .add(item.get());
+                        tag(ItemTags.ARMOR_ENCHANTABLE)
+                                .add(item.get());
+                        tag(ItemTags.DURABILITY_ENCHANTABLE)
                                 .add(item.get());
                         tag(ItemTags.FOOT_ARMOR_ENCHANTABLE)
                                 .add(item.get());
-                        break;
                     case "sword":
                         tag(ItemTags.SWORDS)
                                 .add(item.get());
