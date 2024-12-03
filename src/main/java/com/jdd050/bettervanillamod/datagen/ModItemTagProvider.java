@@ -65,6 +65,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
                                 .add(item.get());
                         tag(ItemTags.FOOT_ARMOR_ENCHANTABLE)
                                 .add(item.get());
+                        break;
                     case "sword":
                         tag(ItemTags.SWORDS)
                                 .add(item.get());
